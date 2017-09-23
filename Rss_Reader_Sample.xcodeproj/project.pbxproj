@@ -15,6 +15,7 @@
 		B634A6441F76B1B0008770AE /* ArticleTopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B634A6421F76B1B0008770AE /* ArticleTopTableViewCell.xib */; };
 		B634A6471F76D3D4008770AE /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B634A6451F76D3D4008770AE /* ArticleTableViewCell.swift */; };
 		B634A6481F76D3D4008770AE /* ArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B634A6461F76D3D4008770AE /* ArticleTableViewCell.xib */; };
+		B634A64A1F76D682008770AE /* ArticleTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B634A6491F76D682008770AE /* ArticleTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		B634A6421F76B1B0008770AE /* ArticleTopTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleTopTableViewCell.xib; sourceTree = "<group>"; };
 		B634A6451F76D3D4008770AE /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		B634A6461F76D3D4008770AE /* ArticleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleTableViewCell.xib; sourceTree = "<group>"; };
+		B634A6491F76D682008770AE /* ArticleTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				B634A62F1F76A782008770AE /* Main.storyboard */,
 				B634A6341F76A782008770AE /* LaunchScreen.storyboard */,
 				B634A6321F76A782008770AE /* Assets.xcassets */,
+				B634A6491F76D682008770AE /* ArticleTableView.swift */,
 				B634A6411F76B1B0008770AE /* ArticleTopTableViewCell.swift */,
 				B634A6421F76B1B0008770AE /* ArticleTopTableViewCell.xib */,
 				B634A6451F76D3D4008770AE /* ArticleTableViewCell.swift */,
@@ -171,6 +174,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B634A64A1F76D682008770AE /* ArticleTableView.swift in Sources */,
 				B634A6431F76B1B0008770AE /* ArticleTopTableViewCell.swift in Sources */,
 				B634A6471F76D3D4008770AE /* ArticleTableViewCell.swift in Sources */,
 				B634A62C1F76A782008770AE /* AppDelegate.swift in Sources */,

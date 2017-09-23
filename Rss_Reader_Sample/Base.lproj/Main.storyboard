@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BdD-PT-2j1">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -140,8 +140,8 @@
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="NbJ-mV-zdv" kind="relationship" relationship="viewControllers" id="4QO-Zh-9hB"/>
                         <segue destination="62S-eN-OdU" kind="relationship" relationship="viewControllers" id="7ff-rf-s5T"/>
+                        <segue destination="NbJ-mV-zdv" kind="relationship" relationship="viewControllers" id="4QO-Zh-9hB"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="leB-dr-58k" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -193,6 +193,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="60Z-SU-1FU"/>
+        <segue reference="aBZ-D1-SJW"/>
     </inferredMetricsTieBreakers>
 </document>
