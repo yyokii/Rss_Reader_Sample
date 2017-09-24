@@ -8,10 +8,13 @@
 
 import UIKit
 
-class ArticleTableView: UITableView, UITableViewDelegate, UITableViewDataSource {
+class ArticleTableView: UITableView, UITableViewDelegate, UITableViewDataSource, XMLParserDelegate {
 
     var siteImageName: String!
-
+    
+    //parseで用いる変数
+    var elementName = ""
+    var articles : Array<Article> = []
     
     override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)
@@ -76,11 +79,46 @@ class ArticleTableView: UITableView, UITableViewDelegate, UITableViewDataSource 
             let request = URLRequest(url: url)
             let session = URLSession.shared
             let task = session.dataTask(with: request, completionHandler: { (
-                data, response, errir) in
+                data, response, error) in
                 
+                print(data!)
+                let parser = XMLParser(data: data!)
+                parser.delegate = self
+                parser.parse()
                 
             })
             task.resume()
+        }
+    }
+    
+    func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
+        self.elementName = elementName
+        
+        if self.elementName == "item" {
+            let article = Article()
+            self.articles.append(article)
+            
+        }
+    }
+    
+    func parser(_ parser: XMLParser, foundCharacters string: String) {
+        let lastArticle = self.articles.last
+        
+        if self.elementName == "title" {
+            lastArticle?.title += string.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+            
+        }else if self.elementName == "description" {
+            lastArticle?.descript += string.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+            
+        }else if self.elementName == "pubDate" {
+            lastArticle?.date += string.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+            
+        }else if self.elementName == "link" {
+            lastArticle?.link += string.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+            
+        }else if self.elementName == "image" {
+            
+            lastArticle?.image += string.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         }
     }
 }
