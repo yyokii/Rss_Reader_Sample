@@ -14,6 +14,7 @@ class ArticleWebViewController: UIViewController, WKNavigationDelegate{
 
     var article: Article!
     let wkWebView = WKWebView()
+    let rightImage = UIImageView()
 
     
     override func viewDidLoad() {
@@ -22,7 +23,8 @@ class ArticleWebViewController: UIViewController, WKNavigationDelegate{
         self.wkWebView.navigationDelegate = self
         
         self.navigationController?.setNavigationBarHidden(false, animated: true)
-        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.tintColor = UIColor.white        
+        setNavigationRightImage(imageName: "heart_on")
         
         //記事タイトル表示の色
         self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "HirakakuProN-W6", size: 13)!, NSForegroundColorAttributeName: UIColor.white]
@@ -42,4 +44,16 @@ class ArticleWebViewController: UIViewController, WKNavigationDelegate{
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         self.navigationItem.title = wkWebView.title
     }
+    
+    func setNavigationRightImage(imageName: String){
+        
+        rightImage.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+        rightImage.image = UIImage(named: imageName)
+        rightImage.isUserInteractionEnabled = true
+        
+        let barButtonItem = UIBarButtonItem()
+        barButtonItem.customView = rightImage
+        self.navigationItem.rightBarButtonItem = barButtonItem
+    }
+
 }
