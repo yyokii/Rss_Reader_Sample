@@ -18,6 +18,11 @@ class ArticleViewController: UIViewController, UIScrollViewDelegate, ArticleTabl
     
     var selectedArticle: Article?
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
