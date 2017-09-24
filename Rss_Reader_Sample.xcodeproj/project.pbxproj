@@ -17,6 +17,7 @@
 		B634A6481F76D3D4008770AE /* ArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B634A6461F76D3D4008770AE /* ArticleTableViewCell.xib */; };
 		B634A64A1F76D682008770AE /* ArticleTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B634A6491F76D682008770AE /* ArticleTableView.swift */; };
 		B634A64C1F76DD63008770AE /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B634A64B1F76DD63008770AE /* ArticleViewController.swift */; };
+		B634A64F1F77762A008770AE /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B634A64E1F77762A008770AE /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		B634A6461F76D3D4008770AE /* ArticleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleTableViewCell.xib; sourceTree = "<group>"; };
 		B634A6491F76D682008770AE /* ArticleTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableView.swift; sourceTree = "<group>"; };
 		B634A64B1F76DD63008770AE /* ArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
+		B634A64E1F77762A008770AE /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		B634A62A1F76A782008770AE /* Rss_Reader_Sample */ = {
 			isa = PBXGroup;
 			children = (
+				B634A64D1F7775FD008770AE /* Utility */,
 				B634A6401F76B12D008770AE /* Model */,
 				B634A63F1F76B12C008770AE /* View */,
 				B634A63D1F76B126008770AE /* Controller */,
@@ -101,6 +104,14 @@
 			children = (
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		B634A64D1F7775FD008770AE /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				B634A64E1F77762A008770AE /* Constant.swift */,
+			);
+			name = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +193,7 @@
 				B634A64C1F76DD63008770AE /* ArticleViewController.swift in Sources */,
 				B634A6471F76D3D4008770AE /* ArticleTableViewCell.swift in Sources */,
 				B634A62C1F76A782008770AE /* AppDelegate.swift in Sources */,
+				B634A64F1F77762A008770AE /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
