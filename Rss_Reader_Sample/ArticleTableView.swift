@@ -10,6 +10,7 @@ import UIKit
 
 class ArticleTableView: UITableView, UITableViewDelegate, UITableViewDataSource, XMLParserDelegate {
 
+    var siteName: String!
     var siteImageName: String!
     
     //parseで用いる変数
@@ -67,6 +68,14 @@ class ArticleTableView: UITableView, UITableViewDelegate, UITableViewDataSource,
             let date: Date = Date.convertDateFromString(article.date)
             cell.date.text = date.convertStringFromDate()
             
+            if self.siteName == "classmethod"{
+                cell.thumbnail.image = UIImage(named: "classMethod")
+            } else{
+                let urlString = article.image
+                self.downloadWithDataTask(urlString: urlString, cell: cell)
+            }
+
+            
             return cell
         }
     }
@@ -102,8 +111,12 @@ class ArticleTableView: UITableView, UITableViewDelegate, UITableViewDataSource,
         if self.elementName == "item" {
             let article = Article()
             self.articles.append(article)
-            
+        } else if self.elementName == "enclosure" {
+            let lastArticle = self.articles.last
+            lastArticle?.image = attributeDict["url"]!
         }
+
+        
     }
     
     func parser(_ parser: XMLParser, foundCharacters string: String) {
@@ -132,4 +145,30 @@ class ArticleTableView: UITableView, UITableViewDelegate, UITableViewDataSource,
             self.reloadData()
         })
     }
+    
+    func downloadWithDataTask(urlString: String, cell: ArticleTableViewCell){
+        
+        let fiveSecondsCache: TimeInterval = 5 * 60
+        
+        let url = URL(string: urlString)
+        
+        let req = URLRequest(url: url!, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: fiveSecondsCache)
+        
+        let conf = URLSessionConfiguration.default
+        let session = URLSession(configuration: conf, delegate: nil, delegateQueue: OperationQueue.main)
+        
+        session.dataTask(with: req, completionHandler:
+            { (data, resp, err) in
+                if (err == nil){
+                    
+                    let image = UIImage(data: data!)
+                    cell.thumbnail.image = image
+                } else {
+                    print("Error：　画像の取得に失敗しました")
+                }
+        }).resume()
+        
+        
+    }
+    
 }
