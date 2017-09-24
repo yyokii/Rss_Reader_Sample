@@ -24,34 +24,37 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eDG-qR-2le">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="dEc-Sd-qiS">
-                                        <rect key="frame" x="16" y="29" width="344" height="18"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="GiE-4R-1ap">
+                                        <rect key="frame" x="16" y="22" width="344" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="classmethod" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6mU-uv-wBT">
-                                                <rect key="frame" x="0.0" y="0.0" width="98" height="18"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86Y-cP-91S">
+                                                <rect key="frame" x="0.0" y="0.0" width="98" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lifehacker" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qtm-Fi-bxZ">
-                                                <rect key="frame" x="123" y="0.0" width="98" height="18"/>
+                                                <state key="normal" title="classmethod">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="epV-dO-IIW">
+                                                <rect key="frame" x="123" y="0.0" width="98" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wired" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JPf-uA-dce">
-                                                <rect key="frame" x="246" y="0.0" width="98" height="18"/>
+                                                <state key="normal" title="lifehacker">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qSL-rq-zyF">
+                                                <rect key="frame" x="246" y="0.0" width="98" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                                <state key="normal" title="wired">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="dEc-Sd-qiS" firstAttribute="centerY" secondItem="eDG-qR-2le" secondAttribute="centerY" id="O95-qm-6XD"/>
-                                    <constraint firstItem="dEc-Sd-qiS" firstAttribute="centerX" secondItem="eDG-qR-2le" secondAttribute="centerX" id="Xk9-nw-0Vd"/>
+                                    <constraint firstItem="GiE-4R-1ap" firstAttribute="centerX" secondItem="eDG-qR-2le" secondAttribute="centerX" id="CUM-Ou-84V"/>
+                                    <constraint firstItem="GiE-4R-1ap" firstAttribute="centerY" secondItem="eDG-qR-2le" secondAttribute="centerY" id="Ksn-NN-0yo"/>
                                     <constraint firstAttribute="height" constant="75" id="phh-LV-2gZ"/>
                                 </constraints>
                             </view>
@@ -72,6 +75,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="2KR-cj-nGQ"/>
                     <connections>
+                        <outlet property="TopCenterButton" destination="epV-dO-IIW" id="1A0-Dd-QBI"/>
+                        <outlet property="TopLRightButton" destination="qSL-rq-zyF" id="Jzn-Fz-BjD"/>
+                        <outlet property="TopLeftButton" destination="86Y-cP-91S" id="EDL-Yh-6C1"/>
                         <outlet property="scrollView" destination="vPb-R9-0jP" id="2z6-wc-dyu"/>
                         <segue destination="N4a-Ak-qzp" kind="showDetail" id="aBZ-D1-SJW"/>
                     </connections>
