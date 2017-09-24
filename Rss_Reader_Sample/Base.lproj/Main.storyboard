@@ -88,17 +88,17 @@
                         <outlet property="TopLRightButton" destination="qSL-rq-zyF" id="Jzn-Fz-BjD"/>
                         <outlet property="TopLeftButton" destination="86Y-cP-91S" id="EDL-Yh-6C1"/>
                         <outlet property="scrollView" destination="vPb-R9-0jP" id="2z6-wc-dyu"/>
-                        <segue destination="N4a-Ak-qzp" kind="showDetail" id="aBZ-D1-SJW"/>
+                        <segue destination="N4a-Ak-qzp" kind="showDetail" identifier="toWebView" id="aBZ-D1-SJW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GGC-jo-a8u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="625" y="108"/>
         </scene>
-        <!--View Controller-->
+        <!--Article Web View Controller-->
         <scene sceneID="mXz-X4-yah">
             <objects>
-                <viewController id="N4a-Ak-qzp" sceneMemberID="viewController">
+                <viewController id="N4a-Ak-qzp" customClass="ArticleWebViewController" customModule="Rss_Reader_Sample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tlW-0y-TCF"/>
                         <viewControllerLayoutGuide type="bottom" id="b61-EN-g4E"/>
@@ -210,6 +210,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="60Z-SU-1FU"/>
+        <segue reference="aBZ-D1-SJW"/>
     </inferredMetricsTieBreakers>
 </document>

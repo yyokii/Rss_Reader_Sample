@@ -8,8 +8,15 @@
 
 import UIKit
 
+@objc protocol ArticleTableViewDelegate {
+    func didSelectTableViewCell (article: Article)
+}
+
 class ArticleTableView: UITableView, UITableViewDelegate, UITableViewDataSource, XMLParserDelegate {
 
+    //デリゲート
+    weak var customDelegate: ArticleTableViewDelegate?
+    
     var siteName: String!
     var siteImageName: String!
     
@@ -82,7 +89,11 @@ class ArticleTableView: UITableView, UITableViewDelegate, UITableViewDataSource,
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        <#code#>
+        
+        if indexPath.section == 1 {
+            let article = articles[indexPath.row]
+            self.customDelegate?.didSelectTableViewCell(article: article)
+        }
     }
     
     

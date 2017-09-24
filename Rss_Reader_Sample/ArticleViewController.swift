@@ -8,13 +8,15 @@
 
 import UIKit
 
-class ArticleViewController: UIViewController,UIScrollViewDelegate {
+class ArticleViewController: UIViewController, UIScrollViewDelegate, ArticleTableViewDelegate {
     
     @IBOutlet weak var TopLeftButton:UIButton!
     @IBOutlet weak var TopCenterButton:UIButton!
     @IBOutlet weak var TopLRightButton:UIButton!
     
     @IBOutlet weak var scrollView:UIScrollView!
+    
+    var selectedArticle: Article?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +39,7 @@ class ArticleViewController: UIViewController,UIScrollViewDelegate {
         
         let frame = CGRect(x: x, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         let articleTableView = ArticleTableView(frame: frame, style: UITableViewStyle.plain)
+        articleTableView.customDelegate = self
         articleTableView.siteName = siteName
         articleTableView.siteImageName = siteImageName
         articleTableView.loadURL(siteURL: siteURL)
@@ -66,6 +69,16 @@ class ArticleViewController: UIViewController,UIScrollViewDelegate {
         default:
             break
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let articleWebViewController = segue.destination as! ArticleWebViewController
+        articleWebViewController.article = selectedArticle
+    }
+    
+    func didSelectTableViewCell(article: Article) {
+        self.selectedArticle = article
+        performSegue(withIdentifier: "toWebView", sender: nil)
     }
     
     
