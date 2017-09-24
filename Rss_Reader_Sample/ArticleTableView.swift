@@ -70,4 +70,17 @@ class ArticleTableView: UITableView, UITableViewDelegate, UITableViewDataSource 
         }
     }
     
+    func loadURL(siteURL: String){
+        //オプショナルバインディング
+        if let url = URL(string: siteURL){
+            let request = URLRequest(url: url)
+            let session = URLSession.shared
+            let task = session.dataTask(with: request, completionHandler: { (
+                data, response, errir) in
+                
+                
+            })
+            task.resume()
+        }
+    }
 }
