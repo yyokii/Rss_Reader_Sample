@@ -7,15 +7,23 @@
 //
 
 import UIKit
+import WebKit
+
 
 class ArticleWebViewController: UIViewController {
 
     var article: Article!
+    let wkWebView = WKWebView()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        //サイト表示のために必要な箇所
+        let URL = Foundation.URL(string: article.link)
+        let URLReq = URLRequest(url: URL!)
+        self.wkWebView.frame = self.view.frame
+        self.wkWebView.load(URLReq)
+        self.view.addSubview(wkWebView)
     }
-    
 }
