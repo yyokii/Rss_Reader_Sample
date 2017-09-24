@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Article View Controller-->
         <scene sceneID="QSW-Xy-YSb">
             <objects>
-                <viewController id="S7m-q0-bBi" sceneMemberID="viewController">
+                <viewController id="S7m-q0-bBi" customClass="ArticleViewController" customModule="Rss_Reader_Sample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Mxx-ho-6Ba"/>
                         <viewControllerLayoutGuide type="bottom" id="25s-86-UXH"/>
@@ -56,7 +56,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vPb-R9-0jP">
-                                <rect key="frame" x="0.0" y="75" width="375" height="592"/>
+                                <rect key="frame" x="0.0" y="75" width="375" height="543"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -72,6 +72,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="2KR-cj-nGQ"/>
                     <connections>
+                        <outlet property="scrollView" destination="vPb-R9-0jP" id="2z6-wc-dyu"/>
                         <segue destination="N4a-Ak-qzp" kind="showDetail" id="aBZ-D1-SJW"/>
                     </connections>
                 </viewController>

@@ -10,6 +10,8 @@ import UIKit
 
 class ArticleTableView: UITableView, UITableViewDelegate, UITableViewDataSource {
 
+    var siteImageName: String!
+
     
     override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)
@@ -47,6 +49,8 @@ class ArticleTableView: UITableView, UITableViewDelegate, UITableViewDataSource 
         if indexPath.section == 0 {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleTopTableViewCell", for: indexPath) as! ArticleTopTableViewCell
+            
+            cell.siteImageView.image = UIImage(named: self.siteImageName)
             
             return cell
             
