@@ -15,6 +15,7 @@ class ArticleWebViewController: UIViewController, WKNavigationDelegate{
     var article: Article!
     let wkWebView = WKWebView()
     let rightImage = UIImageView()
+    var heartFlg = false
 
     
     override func viewDidLoad() {
@@ -22,9 +23,16 @@ class ArticleWebViewController: UIViewController, WKNavigationDelegate{
         
         self.wkWebView.navigationDelegate = self
         
+        //flag の状態取得によってimageNameを変更する必要あり
+        if(heartFlg){
+            setNavigationRightImage(imageName: "heart_on")
+        }else {
+            setNavigationRightImage(imageName: "heart_off")
+        }
+        
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         self.navigationController?.navigationBar.tintColor = UIColor.white        
-        setNavigationRightImage(imageName: "heart_on")
+        setNavigationRightImage(imageName: "heart_off")
         
         //記事タイトル表示の色
         self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "HirakakuProN-W6", size: 13)!, NSForegroundColorAttributeName: UIColor.white]
@@ -52,8 +60,22 @@ class ArticleWebViewController: UIViewController, WKNavigationDelegate{
         rightImage.isUserInteractionEnabled = true
         
         let barButtonItem = UIBarButtonItem()
+        let myTap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ArticleWebViewController.heartTapped))
+        self.rightImage.addGestureRecognizer(myTap)
+        
         barButtonItem.customView = rightImage
         self.navigationItem.rightBarButtonItem = barButtonItem
+    }
+    
+    func heartTapped(){
+    
+        if (heartFlg){
+            setNavigationRightImage(imageName: "heart_off")
+            heartFlg = false
+        } else {
+            setNavigationRightImage(imageName: "heart_on")
+            heartFlg = true
+        }
     }
 
 }
