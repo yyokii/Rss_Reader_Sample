@@ -38,6 +38,7 @@ class ArticleViewController: UIViewController,UIScrollViewDelegate {
         let frame = CGRect(x: x, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         let articleTableView = ArticleTableView(frame: frame, style: UITableViewStyle.plain)
         articleTableView.siteImageName = siteImageName
+        articleTableView.loadURL(siteURL: siteURL)
         self.scrollView.addSubview(articleTableView)
     }
     

@@ -42,7 +42,7 @@ class ArticleTableView: UITableView, UITableViewDelegate, UITableViewDataSource,
         if section == 0{
             return 1
         } else {
-            return 10
+            return articles.count
         }
     }
     
@@ -61,6 +61,11 @@ class ArticleTableView: UITableView, UITableViewDelegate, UITableViewDataSource,
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleTableViewCell", for: indexPath) as! ArticleTableViewCell
             
+            let article = self.articles[(indexPath as NSIndexPath).row]
+            cell.title.text = article.title
+            cell.descript.text = article.descript
+            cell.date.text = article.date
+            
             return cell
         }
     }
@@ -69,7 +74,7 @@ class ArticleTableView: UITableView, UITableViewDelegate, UITableViewDataSource,
         if (indexPath as NSIndexPath).section == 0{
             return 60
         }else{
-            return 85
+            return 100
         }
     }
     
@@ -120,5 +125,11 @@ class ArticleTableView: UITableView, UITableViewDelegate, UITableViewDataSource,
             
             lastArticle?.image += string.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         }
+    }
+    
+    func parserDidEndDocument(_ parser: XMLParser) {
+        DispatchQueue.main.async(execute: {
+            self.reloadData()
+        })
     }
 }
