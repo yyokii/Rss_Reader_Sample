@@ -64,7 +64,8 @@ class ArticleTableView: UITableView, UITableViewDelegate, UITableViewDataSource,
             let article = self.articles[(indexPath as NSIndexPath).row]
             cell.title.text = article.title
             cell.descript.text = article.descript
-            cell.date.text = article.date
+            let date: Date = Date.convertDateFromString(article.date)
+            cell.date.text = date.convertStringFromDate()
             
             return cell
         }
@@ -86,7 +87,6 @@ class ArticleTableView: UITableView, UITableViewDelegate, UITableViewDataSource,
             let task = session.dataTask(with: request, completionHandler: { (
                 data, response, error) in
                 
-                print(data!)
                 let parser = XMLParser(data: data!)
                 parser.delegate = self
                 parser.parse()
