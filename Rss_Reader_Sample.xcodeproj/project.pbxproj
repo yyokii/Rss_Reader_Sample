@@ -20,6 +20,7 @@
 		B634A64F1F77762A008770AE /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B634A64E1F77762A008770AE /* Constant.swift */; };
 		B634A6511F7781F6008770AE /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = B634A6501F7781F6008770AE /* Article.swift */; };
 		B634A6531F778FBC008770AE /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B634A6521F778FBC008770AE /* DateExtension.swift */; };
+		B634A6551F77A109008770AE /* ArticleWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B634A6541F77A109008770AE /* ArticleWebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		B634A64E1F77762A008770AE /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		B634A6501F7781F6008770AE /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = SOURCE_ROOT; };
 		B634A6521F778FBC008770AE /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		B634A6541F77A109008770AE /* ArticleWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleWebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				B634A64B1F76DD63008770AE /* ArticleViewController.swift */,
+				B634A6541F77A109008770AE /* ArticleWebViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B634A6511F7781F6008770AE /* Article.swift in Sources */,
+				B634A6551F77A109008770AE /* ArticleWebViewController.swift in Sources */,
 				B634A6531F778FBC008770AE /* DateExtension.swift in Sources */,
 				B634A64A1F76D682008770AE /* ArticleTableView.swift in Sources */,
 				B634A6431F76B1B0008770AE /* ArticleTopTableViewCell.swift in Sources */,

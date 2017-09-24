@@ -138,7 +138,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="favorite" id="6OV-px-dRy"/>
                     <connections>
-                        <segue destination="N4a-Ak-qzp" kind="showDetail" id="60Z-SU-1FU"/>
+                        <segue destination="N4a-Ak-qzp" kind="showDetail" identifier="toWebView" id="60Z-SU-1FU"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u9D-td-EWC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -151,6 +151,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="BdD-PT-2j1" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="4aH-TG-6qf">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -170,7 +171,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NbJ-mV-zdv" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="bookmarks" id="EeN-3p-xuZ"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="xfr-DX-mkR">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xfr-DX-mkR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -209,6 +210,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="aBZ-D1-SJW"/>
+        <segue reference="60Z-SU-1FU"/>
     </inferredMetricsTieBreakers>
 </document>

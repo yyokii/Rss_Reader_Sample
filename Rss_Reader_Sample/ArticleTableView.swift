@@ -80,6 +80,12 @@ class ArticleTableView: UITableView, UITableViewDelegate, UITableViewDataSource,
         }
     }
     
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        <#code#>
+    }
+    
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if (indexPath as NSIndexPath).section == 0{
             return 60
