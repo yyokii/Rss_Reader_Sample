@@ -34,6 +34,9 @@ class ArticleViewController: UIViewController, UIScrollViewDelegate, ArticleTabl
         setArticleTableView(0, siteName: Constant.classmethod, siteImageName: Constant.classmethodImageName, siteURL: Constant.classmethodURL)
         setArticleTableView(self.view.frame.width, siteName: Constant.lifehacker, siteImageName: Constant.lifehackerImageName, siteURL: Constant.lifehackerURL)
         setArticleTableView(self.view.frame.width*2, siteName: Constant.wired, siteImageName: Constant.wiredImageName, siteURL: Constant.wiredURL)
+        
+        //お気に入りの記事を起動時に取得
+        ArticleStocks.sharedInstance.getMyArticles()
     }
     
     override func viewDidAppear(_ animated: Bool) {

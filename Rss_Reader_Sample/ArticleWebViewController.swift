@@ -16,7 +16,9 @@ class ArticleWebViewController: UIViewController, WKNavigationDelegate{
     let wkWebView = WKWebView()
     let rightImage = UIImageView()
     var heartFlg = false
-
+    
+    var articleStocks = ArticleStocks.sharedInstance
+    //var count = 0　後で説明するね、今はコメントアウトでいいよ
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,9 +73,11 @@ class ArticleWebViewController: UIViewController, WKNavigationDelegate{
     
         if (heartFlg){
             setNavigationRightImage(imageName: "heart_off")
+            //articleStocks.removeMyArticle(count)
             heartFlg = false
         } else {
             setNavigationRightImage(imageName: "heart_on")
+            articleStocks.addArticleStocks(article: self.article)
             heartFlg = true
         }
     }
