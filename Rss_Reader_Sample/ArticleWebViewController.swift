@@ -15,18 +15,16 @@ class ArticleWebViewController: UIViewController, WKNavigationDelegate{
     var article: Article!
     let wkWebView = WKWebView()
     let rightImage = UIImageView()
-    var heartFlg = false
     
     var articleStocks = ArticleStocks.sharedInstance
-    //var count = 0　後で説明するね、今はコメントアウトでいいよ
+    var count = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.wkWebView.navigationDelegate = self
         
-        //flag の状態取得によってimageNameを変更する必要あり
-        if(heartFlg){
+        if(isStockedArticle()){
             setNavigationRightImage(imageName: "heart_on")
         }else {
             setNavigationRightImage(imageName: "heart_off")
@@ -34,7 +32,6 @@ class ArticleWebViewController: UIViewController, WKNavigationDelegate{
         
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         self.navigationController?.navigationBar.tintColor = UIColor.white        
-        setNavigationRightImage(imageName: "heart_off")
         
         //記事タイトル表示の色
         self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "HirakakuProN-W6", size: 13)!, NSForegroundColorAttributeName: UIColor.white]
@@ -71,15 +68,29 @@ class ArticleWebViewController: UIViewController, WKNavigationDelegate{
     
     func heartTapped(){
     
-        if (heartFlg){
+        if (isStockedArticle()){
             setNavigationRightImage(imageName: "heart_off")
-            //articleStocks.removeMyArticle(count)
-            heartFlg = false
+            articleStocks.removeMyArticle(count)
         } else {
             setNavigationRightImage(imageName: "heart_on")
             articleStocks.addArticleStocks(article: self.article)
-            heartFlg = true
         }
+    }
+    
+    //お気に入り
+    func isStockedArticle () ->Bool {
+        self.count = 0 //これ使って配列の場所見つけて削除機能つけれそう（ハートimage 使用の場合のはなし）
+        for myArticle in self.articleStocks.articles {
+            
+            if myArticle.link == self.article.link {
+                return true
+            }
+            
+            count += 1
+            
+        }
+        
+        return false
     }
 
 }
