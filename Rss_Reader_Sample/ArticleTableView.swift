@@ -169,6 +169,7 @@ class ArticleTableView: UITableView, UITableViewDelegate, UITableViewDataSource,
         
         let url = URL(string: urlString)
         
+        print("読み込みurl" + "\(url)a")
         let req = URLRequest(url: url!, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: fiveSecondsCache)
         
         let conf = URLSessionConfiguration.default

@@ -22,6 +22,7 @@
 		B634A6531F778FBC008770AE /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B634A6521F778FBC008770AE /* DateExtension.swift */; };
 		B634A6551F77A109008770AE /* ArticleWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B634A6541F77A109008770AE /* ArticleWebViewController.swift */; };
 		B634A6571F77E1FB008770AE /* ArticleStocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = B634A6561F77E1FB008770AE /* ArticleStocks.swift */; };
+		B634A6591F7FF956008770AE /* ArticleStocksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B634A6581F7FF956008770AE /* ArticleStocksTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		B634A6521F778FBC008770AE /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		B634A6541F77A109008770AE /* ArticleWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleWebViewController.swift; sourceTree = "<group>"; };
 		B634A6561F77E1FB008770AE /* ArticleStocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleStocks.swift; sourceTree = "<group>"; };
+		B634A6581F7FF956008770AE /* ArticleStocksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleStocksTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,8 +89,9 @@
 		B634A63D1F76B126008770AE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B634A64B1F76DD63008770AE /* ArticleViewController.swift */,
 				B634A6541F77A109008770AE /* ArticleWebViewController.swift */,
+				B634A64B1F76DD63008770AE /* ArticleViewController.swift */,
+				B634A6581F7FF956008770AE /* ArticleStocksTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 				TargetAttributes = {
 					B634A6271F76A782008770AE = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 36FDYZWS56;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -207,6 +211,7 @@
 				B634A6431F76B1B0008770AE /* ArticleTopTableViewCell.swift in Sources */,
 				B634A6571F77E1FB008770AE /* ArticleStocks.swift in Sources */,
 				B634A64C1F76DD63008770AE /* ArticleViewController.swift in Sources */,
+				B634A6591F7FF956008770AE /* ArticleStocksTableViewController.swift in Sources */,
 				B634A6471F76D3D4008770AE /* ArticleTableViewCell.swift in Sources */,
 				B634A62C1F76A782008770AE /* AppDelegate.swift in Sources */,
 				B634A64F1F77762A008770AE /* Constant.swift in Sources */,
@@ -330,6 +335,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 36FDYZWS56;
 				INFOPLIST_FILE = Rss_Reader_Sample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yyokii.Rss-Reader-Sample";
@@ -342,6 +348,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 36FDYZWS56;
 				INFOPLIST_FILE = Rss_Reader_Sample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yyokii.Rss-Reader-Sample";

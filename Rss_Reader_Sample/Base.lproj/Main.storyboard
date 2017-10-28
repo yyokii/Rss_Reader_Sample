@@ -117,7 +117,7 @@
         <!--favorite-->
         <scene sceneID="FrH-90-INT">
             <objects>
-                <tableViewController id="lcU-F9-7Ca" sceneMemberID="viewController">
+                <tableViewController id="lcU-F9-7Ca" customClass="ArticleStocksTableViewController" customModule="Rss_Reader_Sample" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="YFT-qe-rep">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -139,7 +139,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="favorite" id="6OV-px-dRy"/>
                     <connections>
-                        <segue destination="N4a-Ak-qzp" kind="show" identifier="toWebView" action="showDetailViewController:sender:" id="60Z-SU-1FU"/>
+                        <segue destination="N4a-Ak-qzp" kind="show" identifier="toWebView" id="hPF-lC-aQ5"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u9D-td-EWC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -214,6 +214,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="60Z-SU-1FU"/>
+        <segue reference="aBZ-D1-SJW"/>
     </inferredMetricsTieBreakers>
 </document>
