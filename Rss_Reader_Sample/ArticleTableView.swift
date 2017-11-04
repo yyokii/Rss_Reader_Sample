@@ -167,10 +167,12 @@ class ArticleTableView: UITableView, UITableViewDelegate, UITableViewDataSource,
         
         let fiveSecondsCache: TimeInterval = 5 * 60
         
-        let url = URL(string: urlString)
-        
-        print("読み込みurl" + "\(url)a")
-        let req = URLRequest(url: url!, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: fiveSecondsCache)
+        //urlをエンコーディングして無効なURLが入ったら処理を抜ける
+        guard let encURL = URL(string:urlString.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!) else {
+            print("urlをエンコード出来なかったよ!")
+            return
+        }
+        let req = URLRequest(url: encURL, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: fiveSecondsCache)
         
         let conf = URLSessionConfiguration.default
         let session = URLSession(configuration: conf, delegate: nil, delegateQueue: OperationQueue.main)
