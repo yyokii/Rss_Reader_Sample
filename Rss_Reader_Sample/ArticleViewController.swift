@@ -58,6 +58,10 @@ class ArticleViewController: UIViewController, UIScrollViewDelegate, ArticleTabl
         setTopButtonColor()
     }
     
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        setTopButtonColor()
+    }
+    
     func setTopButtonColor () {
         let page = scrollView.contentOffset.x
         
